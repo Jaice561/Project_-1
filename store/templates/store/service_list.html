@@ -1,0 +1,22 @@
+{% extends "store/base.html" %} {% block content %}
+
+<section id="J">
+  <div class="J container">
+    <div>
+      {% for service in allservices %}
+
+      <li>
+        {{ service.service_name }} <br />
+        {{ service.service_price }} <br />
+        {{ service.service_time }}
+      </li>
+
+      {% endfor %}
+    </div>
+    <li>
+      <a href="{% url 'store-booking' %}" data-after="Booking">Book</a>
+    </li>
+  </div>
+</section>
+
+{% endblock content %}

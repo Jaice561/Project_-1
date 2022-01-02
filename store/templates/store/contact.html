@@ -1,0 +1,39 @@
+{% extends "store/base.html" %} {% block content %}
+
+<section id="contact">
+  <div class="contact container">
+    <div class="contact-items">
+      <div class="contact-item">
+        <div>
+          <h1 class="section-title">Contact <span>info</span></h1>
+        </div>
+        <h1>Phone</h1>
+        <h2>561-281-4077</h2>
+        <br />
+        <h1>Email</h1>
+        <h2>Jameson_exil@yahoo.com</h2>
+        <h2>Jaice561@gmail.com</h2>
+        <br />
+        <h1>Address</h1>
+        <h2>14000 Noel Rd Dallas, TX 75240</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="contact-info">
+  <div class="contact-info container">
+    <form method="Post">
+      {% csrf_token %}
+      <fieldset class="form-group">
+        <legend class="border-bottom mb-4">
+          Enter Your Contact Information
+        </legend>
+        {{ form.as_p }}
+      </fieldset>
+      <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+</section>
+{% endblock content %}

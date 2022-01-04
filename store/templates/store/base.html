@@ -62,79 +62,65 @@
     </script>
   </head>
   <body>
-    <section id="header">
-      <div class="header container">
-        <div class="nav-bar">
-          <div class="brand">
-            <a href="{% url 'store-home' %}"
-              ><h1>
-                <span>h</span>healthy <span>H</span>air<span>H</span>abits
-              </h1></a
-            >
-          </div>
-          <div class="nav-list">
-            <div class="hamburger">
-              <div class="bar"></div>
-            </div>
-            <ul>
-              <li><a href="{% url 'store-home' %}" data-after="J">Home</a></li>
-              <li>
-                <a href="{% url 'service_list' %}" data-after="Services"
-                  >Service list</a
-                >
-              </li>
-              <li>
-                <a href="{% url 'store-about' %}" data-after="Projects"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a href="{% url 'store-contact' %}" data-after="Contact"
-                  >Contact</a
-                >
-              </li>
-              {% if user.is_authenticated %}
-              <li>
-                <a class="nav-item nav-link" href="{% url 'profile' %}"
-                  >Profile</a
-                >
-              </li>
-              <li>
-                <a class="nav-item nav-link" href="{% url 'logout' %}"
-                  >Logout</a
-                >
-              </li>
-              <li>
-                <div class="form-inline my-2 my-lg-0">
-                  <a href="{% url 'store-cart' %}">
-                    <img id="cart-icon" src="{% static 'images/cart.png' %}" />
-                  </a>
-                  <p id="cart-total">{{ cartItems }}</p>
-                </div>
-              </li>
-              {% else %}
-              <li>
-                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-              </li>
-              <li>
-                <a class="nav-item nav-link" href="{% url 'register' %}"
-                  >Register</a
-                >
-              </li>
-              <li>
-                <div class="form-inline my-2 my-lg-0">
-                  <a href="{% url 'store-cart' %}">
-                    <img id="cart-icon" src="{% static 'images/cart.png' %}" />
-                  </a>
-                  <p id="cart-total">{{ cartItems }}</p>
-                </div>
-                {% endif %}
-              </li>
-            </ul>
-          </div>
-        </div>
+    <!-- navbar -->
+    <!-- nav button -->
+    <span class="nav-btn" id="nav-btn">
+      <i class="fas fa-bars"></i>
+    </span>
+    <nav class="navbar" id="navbar">
+      <div class="navbar-header">
+        <span class="nav-close" id="nav-close">
+          <i class="fas fa-times"></i>
+        </span>
       </div>
-    </section>
+      <ul class="nav-items">
+        <li><a href="{% url 'store-home' %}" data-after="J">Home</a></li>
+        <li>
+          <a href="{% url 'service_list' %}" data-after="Services"
+            >Service list</a
+          >
+        </li>
+        <li>
+          <a href="{% url 'store-about' %}" data-after="Projects">About Us</a>
+        </li>
+        <li>
+          <a href="{% url 'store-contact' %}" data-after="Contact">Contact</a>
+        </li>
+        {% if user.is_authenticated %}
+        <li>
+          <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+        <li>
+          <div class="form-inline my-2 my-lg-0">
+            <a href="{% url 'store-cart' %}">
+              <img id="cart-icon" src="{% static 'images/cart.png' %}" />
+            </a>
+            <p id="cart-total">{{ cartItems }}</p>
+          </div>
+        </li>
+        {% else %}
+        <li>
+          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+        </li>
+        <li>
+          <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+        </li>
+        <li>
+          <div class="form-inline my-2 my-lg-0">
+            <a href="{% url 'store-cart' %}">
+              <img id="cart-icon" src="{% static 'images/cart.png' %}" />
+            </a>
+            <p id="cart-total">{{ cartItems }}</p>
+          </div>
+          {% endif %}
+        </li>
+      </ul>
+    </nav>
+    <!-- header -->
+
     {% block content %}{% endblock content %}
 
     <script

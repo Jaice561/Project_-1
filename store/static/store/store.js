@@ -1,10 +1,17 @@
-var hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
-var mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
-var menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
-var header = document.querySelector('.header.container');
-console.log('USER', user)
+var date = (document.getElementById("date").innerHTML = new Date().getFullYear());
+var navBtn = document.getElementById("nav-btn");
+var navbar = document.getElementById("navbar");
+var navClose = document.getElementById("nav-close");
 var updateBtns = document.getElementsByClassName('update-cart');
 
+
+navBtn.addEventListener("click", () => {
+    navbar.classList.add("showNav");
+});
+
+navClose.addEventListener("click", () => {
+    navbar.classList.remove("showNav")
+})
 
 for (var i = 0; i < updateBtns.length; i++) {
     updateBtns[i].addEventListener('click', function(){
@@ -71,28 +78,31 @@ function updateUserOrder(productId, action) {
 }
 
 
-hamburger.addEventListener('click',()=> {
-    hamburger.classList.toggle('active');
-    mobile_menu.classList.toggle('active');
-});
+  //setup date
 
-document.addEventListener('scroll', ()=> {
-    let scroll_position = window.scrollY
-    if(scroll_position > 250){
-        header.style.backgroundColor = "#29323c";
-    }else{
-        header.style.backgroundColor = "transparent";
-    }
-});
 
-menu_item.forEach((item) => {
-    item.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        mobile_menu.classList.toggle('active');
-    });
-});
+// hamburger.addEventListener('click',()=> {
+//     hamburger.classList.toggle('active');
+//     mobile_menu.classList.toggle('active');
+// });
 
-console.log(updateBtns)
+// document.addEventListener('scroll', ()=> {
+//     let scroll_position = window.scrollY
+//     if(scroll_position > 250){
+//         header.style.backgroundColor = "#29323c";
+//     }else{
+//         header.style.backgroundColor = "transparent";
+//     }
+// });
+
+// menu_item.forEach((item) => {
+//     item.addEventListener('click', () => {
+//         hamburger.classList.toggle('active');
+//         mobile_menu.classList.toggle('active');
+//     });
+// });
+
+// console.log(updateBtns)
 
 
 

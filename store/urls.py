@@ -5,7 +5,7 @@ from.views import PostCreateView, processOrder
 
 urlpatterns = [
     path('', views.home, name='store-home'),
-    path('service_list/', views.service, name='store-service_list'),
+    path('service_list/', views.service, name='service_list'),
     path('about/', views.about, name='store-about'),
     # path('contact/', views.contact, name='store-contact'),
     path('post/new/', PostCreateView.as_view(), name='store-contact'),

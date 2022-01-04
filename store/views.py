@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import tree
 from django.views.generic import ListView, CreateView
-from .models import Customer, Order, OrderItem, Product, Contact_Info, ShippingAddress
+from .models import Order, OrderItem, Product, Contact_Info, Service, ShippingAddress
 from django.http import JsonResponse
 from .utils import cartData, cookieCart, guessOrder
 import json
@@ -51,7 +51,7 @@ def updateItem(request):
     print('Action:', action)
     print('Product:', productId)
 
-    customer = request.user.customer
+    customer = request.user
     product = Product.objects.get(id=productId)
     order, created = Order.objects.get_or_create(
         customer=customer, complete=False)
@@ -76,7 +76,7 @@ def processOrder(request):
     data = json.loads(request.body)
 
     if request.user.is_authenticated:
-        customer = request.user.customer
+        customer = request.user
         order, created = Order.objects.get_or_create(
             customer=customer, complete=False)
 
@@ -108,6 +108,12 @@ def service(request):
 
     return render(request, 'store/service_list.html', {'allservices': allservices})
 
+# class ServiceListView(ListView):
+#     model = Service
+#     allservices = Service.objects.all()
+#     template_name = 'store/service_list.html'
+#     context_object_name = 'service_list'
+
 
 def about(request):
     return render(request, 'store/about.html')
@@ -129,10 +135,3 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-
-
-# class ServiceListView(ListView):
-#     model = Service
-#     allservices = Service.objects.all()
-#     template_name = 'store/service_list.html'
-#     context_object_name = 'service_list'

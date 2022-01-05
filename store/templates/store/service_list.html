@@ -1,22 +1,73 @@
-{% extends "store/base.html" %} {% block content %}
+{% extends "store/base.html" %} {% load static %} {% block content %}
 
-<section id="J">
-  <div class="J container">
-    <div>
-      {% for service in allservices %}
-
-      <li>
-        {{ service.service_name }} <br />
-        {{ service.service_price }} <br />
-        {{ service.service_time }}
-      </li>
-
+<section class="products">
+  <div class="section-center clearfix">
+    <article class="products-inventory clearfix">
+      {% for product in products %}
+      <div class="product">
+        <img
+          src="{{product.image.url}}"
+          alt="single product"
+          class="product-img"
+        />
+        <h4 class="product-title">{{ product.name }}</h4>
+        <h4 class="product-price">${{ product.price }}</h4>
+        <button
+          data-product="{{product.id}}"
+          data-action="add"
+          class="btn btn-outline-secondary add-btn update-cart"
+        >
+          Book
+        </button>
+        <a class="btn btn-outline-success" href="#">View</a>
+      </div>
+      <!-- <div class="product">
+        <img
+          src="./images/product-2.jpeg"
+          alt="single product"
+          class="product-img"
+        />
+        <h4 class="product-title">white tea</h4>
+        <h4 class="product-price">$6.99</h4>
+      </div>
+      <div class="product">
+        <img
+          src="./images/product-3.jpeg"
+          alt="single product"
+          class="product-img"
+        />
+        <h4 class="product-title">fruit sangria</h4>
+        <h4 class="product-price">$5.99</h4>
+      </div> -->
       {% endfor %}
-    </div>
-    <li>
-      <a href="{% url 'store-booking' %}" data-after="Booking">Book</a>
-    </li>
+    </article>
   </div>
 </section>
+
+<!-- <section id="J">
+  <div class="J container">
+    {% for product in products %}
+    <div class="col-lg-4">
+      <img class="thumbnail" src="{{product.image.url}}" />
+      <div class="box-element product">
+        <h6><strong>{{ product.name }}</strong></h6>
+        <hr />
+
+        <button
+          data-product="{{product.id}}"
+          data-action="add"
+          class="btn btn-outline-secondary add-btn update-cart"
+        >
+          Add to Cart
+        </button>
+        <a class="btn btn-outline-success" href="#">View</a>
+        <h4 style="display: inline-block">
+          <strong>${{product.price}}</strong>
+        </h4>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section> -->
 
 {% endblock content %}

@@ -1,42 +1,33 @@
-{% extends "store/base.html" %} {% block content %}
+{% extends "store/base.html" %} {% load static %} {% block content %}
 
-<section id="about">
-  <div class="about container">
-    <div class="col-left">
-      <div class="about-img">
-        <img src="./images/exil.jpg" alt="img" />
+<section>
+  <div class="section-center clearfix">
+    <article class="about-img">
+      <div class="about-picture-container">
+        <img
+          src="{% static 'images/productOne.jpeg' %}"
+          alt="tea"
+          class="about-picture"
+        />
       </div>
-    </div>
-    <div class="col-right">
-      <h1 class="section-title">About <span>me</span></h1>
-      <h2>Full-stack Web Developer</h2>
-      <p>
-        My name is Jameson Exil, but my friends call me J-Mo. I was born in
-        Haiti, August 25th 1995. After my mom passed away when I was 10 years
-        old, my father, who was living in the United States at the time, decided
-        it was a good idea to bring me to America.<br /><br />
-
-        I played soccer throughout middle school, high school and college. Now I
-        play for a United Premier Soccer League team named Somerset SC. I went
-        to Nichols College for my freshman year in 2015 and now I'm finishing my
-        bachelor’s degree at Keiser University. I major in accounting and I'm
-        also a software engineer. This year (2020) I obtained two software
-        engineer certifications at general assembly with my accounting
-        associate’s degree. Now I'm on track to finish my bachelor’s in about a
-        year.<br /><br />
-
-        The first software engineering course I completed was a front-end
-        course. I learned about:<br />
-        ● HTML ● JavaScript ● CSS ● JQuery.
-        <br /><br />
-        The second course I completed was both front-end and back-end. I learned
-        various technologies and programming languages:<br />
-        ● JavaScript/Python ● HTML/CSS ● Django ● Zoom ● Customer Service ●
-        Organization ● Communication ● AWS -In Progress ● Node.js/Express.js ●
-        Time Management ● React ● Git/Github ● Remote Work
+    </article>
+    <article class="about-info">
+      <div class="section-title">
+        <h3>YOUR HAIR IS OUR MASTERPIECE!</h3>
+        <h2>EBONY HUDSON</h2>
+      </div>
+      <p class="about-text">
+        Ebony Hudson is a qualified and professional hairstylist with over 5
+        years of experience in the hair and beauty industry! Unlike other
+        stylists, Ebony works her magic on natural hair, weaves, and as a
+        colorist
       </p>
-      <a href="#" class="cta">Download Resume</a>
-    </div>
+      <!-- <p class="about-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab
+        illum temporibus minus possimus dolorem.
+      </p> -->
+      <a href="about.html" class="btn">learn more</a>
+    </article>
   </div>
 </section>
 

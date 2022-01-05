@@ -1,15 +1,4 @@
 {% extends "store/base.html" %} {% load static %} {% block content %}
-<!-- header -->
-<header class="header">
-  <div class="banner">
-    <h2>Hair and Beyond</h2>
-    <h1>
-      HEALTHY <br />
-      HAIR HABITS
-    </h1>
-    <a href="skills.html" class="btn banner-btn"> explore </a>
-  </div>
-</header>
 <!-- end of header  -->
 <!-- content divider  -->
 <div class="content-divider"></div>
@@ -91,7 +80,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab
         illum temporibus minus possimus dolorem.
       </p> -->
-      <a href="about.html" class="btn">learn more</a>
+      <a href="{% url 'store-about' %}" class="btn">learn more</a>
     </article>
   </div>
 </section>
@@ -109,7 +98,7 @@
         nesciunt doloremque ullam laudantium nam, sed dolorem aliquam
         necessitatibus quaerat. Eum vitae non dolore aperiam.
       </p>
-      <a href="products.html" class="btn">inventory</a>
+      <a href="{% url 'store-booking' %}" class="btn">inventory</a>
     </article>
 
     <article class="products-inventory clearfix">
@@ -170,7 +159,7 @@
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium,
           corrupti id! Corrupti quam est ad!
         </p>
-        <a href="products.html" class="btn service-btn">read more</a>
+        <a href="{% url 'service_list' %}" class="btn service-btn">read more</a>
       </div>
     </article>
     <article class="service-card">
@@ -280,26 +269,6 @@
   </div>
 </section>
 <!-- end of contact form  -->
-<!-- footer  -->
-<footer class="footer">
-  <div class="section-center">
-    <div class="social-icons">
-      <a href="#" class="social-icon">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="#" class="social-icon">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#" class="social-icon">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </div>
-    <h4 class="footer-text">
-      &copy;<span id="date"></span> <span class="company">tea station</span> all
-      rights reserved
-    </h4>
-  </div>
-</footer>
 
 <!-- <section id="J">
   <div class="J container">

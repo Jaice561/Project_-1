@@ -1,6 +1,50 @@
 {% extends "store/base.html" %} {% load static %} {% block content %}
 
-<section id="J">
+<section class="products">
+  <div class="section-center clearfix">
+    <article class="products-inventory clearfix">
+      {% for product in products %}
+      <div class="product">
+        <img
+          src="{{product.image.url}}"
+          alt="single product"
+          class="product-img"
+        />
+        <h4 class="product-title">{{ product.name }}</h4>
+        <h4 class="product-price">${{ product.price }}</h4>
+        <button
+          data-product="{{product.id}}"
+          data-action="add"
+          class="btn btn-outline-secondary add-btn update-cart"
+        >
+          Add to Cart
+        </button>
+        <a class="btn btn-outline-success" href="#">View</a>
+      </div>
+      <!-- <div class="product">
+        <img
+          src="./images/product-2.jpeg"
+          alt="single product"
+          class="product-img"
+        />
+        <h4 class="product-title">white tea</h4>
+        <h4 class="product-price">$6.99</h4>
+      </div>
+      <div class="product">
+        <img
+          src="./images/product-3.jpeg"
+          alt="single product"
+          class="product-img"
+        />
+        <h4 class="product-title">fruit sangria</h4>
+        <h4 class="product-price">$5.99</h4>
+      </div> -->
+      {% endfor %}
+    </article>
+  </div>
+</section>
+
+<!-- <section id="J">
   <div class="J container">
     {% for product in products %}
     <div class="col-lg-4">
@@ -24,6 +68,6 @@
     </div>
     {% endfor %}
   </div>
-</section>
+</section> -->
 
 {% endblock content %}

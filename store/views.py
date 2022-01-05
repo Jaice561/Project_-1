@@ -12,7 +12,9 @@ import datetime
 
 # Create your views here.
 def home(request):
-    return render(request, 'store/home.html')
+    products = Product.objects.all()
+
+    return render(request, 'store/home.html', {'products': [products]})
 
 
 def booking(request):

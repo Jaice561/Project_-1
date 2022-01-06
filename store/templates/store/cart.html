@@ -6,9 +6,15 @@
       <a class="btn btn-outline-dark" href="{% url 'store-booking' %}"
         >&#x2190; Continue Shopping</a
       >
+      <a
+        style="float: right"
+        class="btn btn-outline-dark"
+        href="{% url 'store-checkout' %}"
+        >Checkout</a
+      >
       <br />
       <br />
-      <table class="table">
+      <!-- <table class="table">
         <tr>
           <th>
             <h5>Items: <strong>{{ order.get_cart_items }}</strong></h5>
@@ -25,7 +31,7 @@
             >
           </th>
         </tr>
-      </table>
+      </table> -->
     </div>
 
     <br />
@@ -65,6 +71,16 @@
         <div style="flex: 1"><p>${{ item.get_total }}</p></div>
       </div>
       {% endfor %}
+      <table class="table">
+        <tr>
+          <th>
+            <h5>Items: <strong>{{ order.get_cart_items }}</strong></h5>
+          </th>
+          <th>
+            <h5>Total:<strong>${{ order.get_cart_total }}</strong></h5>
+          </th>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

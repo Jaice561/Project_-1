@@ -28,9 +28,9 @@
             </div>
 
             <div id="shipping-info">
-              <hr />
+              <!-- <hr /> -->
               <p>Shipping Information:</p>
-              <hr />
+              <!-- <hr /> -->
               <div class="form-field">
                 <input
                   class="form-control"
@@ -64,13 +64,14 @@
                 />
               </div>
             </div>
-            <hr />
+
             <input
               id="form-button"
               class="btn btn-success btn-block"
               type="submit"
               value="Continue"
             />
+            <!-- <hr /> -->
           </form>
         </div>
       </div>
@@ -81,10 +82,7 @@
       </div>
       <div class="col-lg-6">
         <div class="box-element">
-          <a class="btn btn-outline-dark" href="{% url 'store-cart' %}"
-            >&#x2190; Back to Cart</a
-          >
-          <hr />
+          <!-- <hr /> -->
           <h3>Order Summary</h3>
           <hr />
           {% for item in items %}
@@ -102,6 +100,9 @@
           {% endfor %}
           <h5>Items: {{ order.get_cart_items }}</h5>
           <h5>Total: ${{ order.get_cart_total }}</h5>
+          <a class="btn btn-outline-dark" href="{% url 'store-cart' %}"
+            >&#x2190; Back to Cart</a
+          >
         </div>
       </div>
     </div>

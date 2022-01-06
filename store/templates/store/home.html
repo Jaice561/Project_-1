@@ -86,6 +86,7 @@
 </section>
 <!-- end of about section  -->
 <!-- product section  -->
+
 <section class="products">
   <div class="section-center clearfix">
     <article class="products-info">
@@ -98,42 +99,41 @@
         nesciunt doloremque ullam laudantium nam, sed dolorem aliquam
         necessitatibus quaerat. Eum vitae non dolore aperiam.
       </p>
-      <a href="{% url 'store-booking' %}" class="btn">inventory</a>
+      <a href="products.html" class="btn">inventory</a>
     </article>
-
     <article class="products-inventory clearfix">
-      {% for product in products %}
       <div class="product">
         <img
-          src="{{product.image.url}}"
+          src="{% static 'images/productOne.jpeg' %}"
           alt="single product"
           class="product-img"
         />
-        <h4 class="product-title">{{ product.name }}</h4>
-        <h4 class="product-price">${{ product.price }}</h4>
+        <h4 class="product-title">ginger peach tea</h4>
+        <h4 class="product-price">$5.99</h4>
       </div>
-      <!-- <div class="product">
+      <div class="product">
         <img
-          src="./images/product-2.jpeg"
+          src="{% static 'images/productOne.jpeg' %}"
           alt="single product"
           class="product-img"
         />
         <h4 class="product-title">white tea</h4>
         <h4 class="product-price">$6.99</h4>
       </div>
+
       <div class="product">
         <img
-          src="./images/product-3.jpeg"
+          src="{% static 'images/productOne.jpeg' %}"
           alt="single product"
           class="product-img"
         />
         <h4 class="product-title">fruit sangria</h4>
         <h4 class="product-price">$5.99</h4>
-      </div> -->
-      {% endfor %}
+      </div>
     </article>
   </div>
 </section>
+
 <!-- end of product section  -->
 <!-- services section  -->
 <section class="services">

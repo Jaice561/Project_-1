@@ -5,12 +5,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+      href="{% static 'store/fontawesome-free-5.15.3-web/css/all.min.css' %}"
     />
 
     <link
@@ -18,7 +15,6 @@
       type="text/css"
       href="{% static 'store/main.css' %}"
     />
-    <title>Document</title>
 
     <script type="text/javascript">
       let user = "{{request.user}}";
@@ -64,7 +60,97 @@
   <body>
     <!-- navbar -->
     <!-- nav button -->
-    <span class="nav-btn" id="nav-btn">
+    <!-- <nav class="navbar">
+      <div class="container">
+        <div class="navbar-header">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#navbar"
+            aria-expanded="false"
+            aria-controls="navbar"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="{% url 'store-home' %}" class="nav-link" data-after="J"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'service_list' %}"
+                class="nav-link"
+                data-after="Services"
+                >Service list</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'store-about' %}"
+                class="nav-link"
+                data-after="Projects"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="{% url 'store-contact' %}"
+                class="nav-link"
+                data-after="Contact"
+                >Contact</a
+              >
+            </li>
+            {% if user.is_authenticated %}
+            <li>
+              <a class="nav-item nav-link" href="{% url 'profile' %}"
+                >Profile</a
+              >
+            </li>
+            <li>
+              <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+            </li>
+            <li>
+              <div class="form-inline my-2 my-lg-0">
+                <a href="{% url 'store-cart' %}" class="nav-link">
+                  <!-- <img id="cart-icon" src="{% static 'images/cart.png' %}" />
+                </a>
+                <p id="cart-total">{{ cartItems }}</p>
+              </div>
+            </li>
+            {% else %}
+            <li>
+              <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+            <li>
+              <a class="nav-item nav-link" href="{% url 'register' %}"
+                >Register</a
+              >
+            </li>
+            <li>
+              <div class="form-inline my-2 my-lg-0">
+                <a href="{% url 'store-cart' %}">
+                  <!-- <img id="cart-icon" src="{% static 'images/cart.png' %}" /> 
+                </a>
+                <p id="cart-total">{{ cartItems }}</p>
+              </div>
+              {% endif %}
+            </li>
+          </ul>
+        </div>
+        <!--/.nav-collapse
+      </div>
+    </nav> -->
+
+    <!-- <span class="nav-btn" id="nav-btn">
       <i class="fas fa-bars"></i>
     </span>
     <nav class="navbar" id="navbar">
@@ -74,17 +160,34 @@
         </span>
       </div>
       <ul class="nav-items">
-        <li><a href="{% url 'store-home' %}" data-after="J">Home</a></li>
         <li>
-          <a href="{% url 'service_list' %}" data-after="Services"
+          <a href="{% url 'store-home' %}" class="nav-link" data-after="J"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            href="{% url 'service_list' %}"
+            class="nav-link"
+            data-after="Services"
             >Service list</a
           >
         </li>
         <li>
-          <a href="{% url 'store-about' %}" data-after="Projects">About Us</a>
+          <a
+            href="{% url 'store-about' %}"
+            class="nav-link"
+            data-after="Projects"
+            >About Us</a
+          >
         </li>
         <li>
-          <a href="{% url 'store-contact' %}" data-after="Contact">Contact</a>
+          <a
+            href="{% url 'store-contact' %}"
+            class="nav-link"
+            data-after="Contact"
+            >Contact</a
+          >
         </li>
         {% if user.is_authenticated %}
         <li>
@@ -95,7 +198,7 @@
         </li>
         <li>
           <div class="form-inline my-2 my-lg-0">
-            <a href="{% url 'store-cart' %}">
+            <a href="{% url 'store-cart' %}" class="nav-link">
               <img id="cart-icon" src="{% static 'images/cart.png' %}" />
             </a>
             <p id="cart-total">{{ cartItems }}</p>
@@ -118,9 +221,95 @@
           {% endif %}
         </li>
       </ul>
-    </nav>
+    </nav> -->
     <!-- header -->
     <header class="header">
+      <!-- <div class="container">
+        <nav>
+          <h1 class="brand"><a href="index.html">Br<span>a</span>nd</a></h1>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Booking</a></li>
+          </ul>
+        </nav>
+      </div> -->
+      <span class="nav-btn" id="nav-btn">
+        <i class="fas fa-bars"></i>
+      </span>
+      <nav class="navbar" id="navbar">
+        <div class="navbar-header">
+          <span class="nav-list nav-close" id="nav-close">
+            <i class="fas fa-times"></i>
+          </span>
+        </div>
+        <ul class="nav-items">
+          <li>
+            <a
+              href="{% url 'store-home' %}"
+              class="nav-link image-one"
+              data-after="J"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'store-about' %}"
+              class="nav-link"
+              data-after="Projects"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a href="{% url 'store-booking' %}" class="nav-link">Products</a>
+          </li>
+          <li>
+            <a
+              href="{% url 'service_list' %}"
+              class="nav-link"
+              data-after="Services"
+              >Service list</a
+            >
+          </li>
+
+          {% if user.is_authenticated %}
+          <li>
+            <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
+          </li>
+          <li>
+            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          <li>
+            <div class="form-inline my-2 my-lg-0">
+              <a href="{% url 'store-cart' %}" class="nav-item nav-link">
+                <img id="cart-icon" src="{% static 'images/cart.png' %}" />
+              </a>
+              <p id="cart-total">{{ cartItems }}</p>
+            </div>
+          </li>
+          {% else %}
+          <li>
+            <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          <li>
+            <a class="nav-item nav-link" href="{% url 'register' %}"
+              >Register</a
+            >
+          </li>
+          <li class="nav-cart">
+            <div>
+              <a href="{% url 'store-cart' %}">
+                <img id="cart-icon" src="{% static 'images/cart.png' %}" />
+              </a>
+              <p id="cart-total">{{ cartItems }}</p>
+            </div>
+            {% endif %}
+          </li>
+        </ul>
+      </nav>
+      <!-- header -->
+
       <div class="banner">
         <h2>Hair and Beyond</h2>
         <h1>

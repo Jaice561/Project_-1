@@ -1,17 +1,22 @@
-var date = (document.getElementById("date").innerHTML = new Date().getFullYear());
-var navBtn = document.getElementById("nav-btn");
-var navbar = document.getElementById("navbar");
-var navClose = document.getElementById("nav-close");
+const date = (document.getElementById(
+    "date"
+  ).innerHTML = new Date().getFullYear());
+  const navBtn = document.getElementById("nav-btn");
+  const navbar = document.getElementById("navbar");
+  const navClose = document.getElementById("nav-close");
+  // show nav
+  navBtn.addEventListener("click", () => {
+    navbar.classList.add("showNav");
+  });
+  // close nav
+  navClose.addEventListener("click", () => {
+    navbar.classList.remove("showNav");
+  });
+  //setup date
 var updateBtns = document.getElementsByClassName('update-cart');
 
 
-navBtn.addEventListener("click", () => {
-    navbar.classList.add("showNav");
-});
 
-navClose.addEventListener("click", () => {
-    navbar.classList.remove("showNav")
-})
 
 for (var i = 0; i < updateBtns.length; i++) {
     updateBtns[i].addEventListener('click', function(){

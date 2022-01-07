@@ -1,68 +1,74 @@
 {% extends "store/base.html" %} {% load static %} {% block content %}
 <!-- end of header  -->
 <!-- content divider  -->
-<div class="content-divider"></div>
 <!-- end of content divider  -->
 <!-- skills section  -->
 <section class="skills clearfix">
   <!-- single skill  -->
   <article class="skill">
     <span class="skill-icon">
-      <i class="fas fa-mug-hot"></i>
+      <p>Exclusive</p>
     </span>
-    <h4 class="skill-title">made in US</h4>
+    <h4 class="skill-title">HAIR PRODUCTS</h4>
     <p class="skill-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-      sapiente.
+      HAPPY HAIR . HAPPY LIFE
     </p>
+    <a href="">a</a>
   </article>
   <!-- end of single skill  -->
   <!-- single skill  -->
   <article class="skill">
-    <span class="skill-icon">
-      <i class="fas fa-bomb"></i>
+    <!-- <span class="skill-icon">
+      <p>Perfect</p>
     </span>
 
     <h4 class="skill-title">energy</h4>
     <p class="skill-text">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
       sapiente.
-    </p>
+    </p> -->
+    <!-- <div class="skill-img"> -->
+      <img
+          src="{% static 'images/IMG_8500.jpg' %}"
+          alt="single product"
+        />
+    </div>
+    
   </article>
   <!-- end of single skill  -->
   <!-- single skill  -->
   <article class="skill">
     <span class="skill-icon">
-      <i class="fas fa-bomb"></i>
+      <p>Perfect</p>
+      
     </span>
 
-    <h4 class="skill-title">energy</h4>
+    <h4 class="skill-title">HAIRSTYLES</h4>
     <p class="skill-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-      sapiente.
+      HAIRSTYLES WITH HAPPY ENDING
     </p>
+    <a href="">a</a>
   </article>
 
   <!-- end of single skill  -->
   <!-- single skill  -->
   <article class="skill">
-    <span class="skill-icon">
-      <i class="fas fa-mortar-pestle"></i>
-    </span>
-    <h4 class="skill-title">family recipe</h4>
-    <p class="skill-text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
-      sapiente.
-    </p>
+    <img
+    src="{% static 'images/IMG_8499.jpg' %}"
+    alt="single product"
+  />
+
   </article>
+  
   <!-- end of single skill  -->
 </section>
+<div class="content-divider"></div>
 <section>
   <div class="section-center clearfix">
     <article class="about-img">
       <div class="about-picture-container">
         <img
-          src="{% static 'images/productOne.jpeg' %}"
+          src="{% static 'images/IMG_3620.jpg' %}"
           alt="tea"
           class="about-picture"
         />
@@ -87,6 +93,7 @@
     </article>
   </div>
 </section>
+<div class="content-divider"></div>
 <!-- end of about section  -->
 <!-- product section  -->
 
@@ -97,13 +104,13 @@
         <h3>check out</h3>
         <h2>our products</h2>
       </div>
-      <p class="product-text">
+      <!-- <p class="product-text">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et deleniti
         nesciunt doloremque ullam laudantium nam, sed dolorem aliquam
         necessitatibus quaerat. Eum vitae non dolore aperiam.
-      </p>
-      <a href="{% url 'store-booking' %}" class="btn">inventory</a>
-    </article>
+      </p> -->
+      <!-- <a href="{% url 'store-booking' %}" class="btn">inventory</a>
+    </article> -->
     <article class="products-inventory clearfix">
       <div class="product">
         <img
@@ -136,7 +143,7 @@
     </article>
   </div>
 </section>
-
+<div class="content-divider"></div>
 <!-- end of product section  -->
 <!-- services section  -->
 <section class="services">
@@ -148,12 +155,16 @@
     <article class="service-card">
       <div class="service-img-container">
         <img
-          src="./images/product-1.jpeg"
+          src="{% static 'images/IMG_8495.jpg' %}"
           class="service-img"
           alt="single service"
         />
         <span class="service-icon">
-          <i class="fas fa-mortar-pestle fa-fw"></i>
+          <img
+            src="{% static 'images/IMG_1345.png' %}"
+            class="service-img"
+            alt="single service"
+          />
         </span>
       </div>
       <div class="service-info">
@@ -168,12 +179,16 @@
     <article class="service-card">
       <div class="service-img-container">
         <img
-          src="./images/product-2.jpeg"
+          src="{% static 'images/service.jpg' %}"
           class="service-img"
           alt="single service"
         />
         <span class="service-icon">
-          <i class="fas fa-home fa-fw"></i>
+          <img
+            src="{% static 'images/IMG_1345.png' %}"
+            class="service-img"
+            alt="single service"
+          />
         </span>
       </div>
       <div class="service-info">
@@ -188,12 +203,16 @@
     <article class="service-card">
       <div class="service-img-container">
         <img
-          src="./images/product-3.jpeg"
+          src="{% static 'images/IMG_8497.jpg' %}"
           class="service-img"
           alt="single service"
         />
         <span class="service-icon">
-          <i class="fas fa-mug-hot fa-fw"></i>
+          <img
+            src="{% static 'images/IMG_1345.png' %}"
+            class="service-img"
+            alt="single service"
+          />
         </span>
       </div>
       <div class="service-info">
@@ -207,6 +226,7 @@
     </article>
   </div>
 </section>
+<div class="content-divider"></div>
 <!-- end of services section  -->
 <!-- contact form  -->
 <section class="contact">
@@ -215,7 +235,11 @@
       <div class="contact-item">
         <h4 class="contact-title">
           <span class="contact-icon">
-            <i class="fas fa-location-arrow"></i>
+            <img
+              src="{% static 'images/IMG_1345.png' %}"
+              class="service-img"
+              alt="single service"
+            />
           </span>
           address
         </h4>
@@ -227,7 +251,11 @@
       <div class="contact-item">
         <h4 class="contact-title">
           <span class="contact-icon">
-            <i class="fas fa-envelope"></i>
+            <img
+              src="{% static 'images/IMG_1345.png' %}"
+              class="service-img"
+              alt="single service"
+            />
           </span>
           email
         </h4>
@@ -236,7 +264,11 @@
       <div class="contact-item">
         <h4 class="contact-title">
           <span class="contact-icon">
-            <i class="fas fa-phone"></i>
+            <img
+              src="{% static 'images/IMG_1345.png' %}"
+              class="service-img"
+              alt="single service"
+            />
           </span>
           telephone
         </h4>

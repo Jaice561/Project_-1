@@ -12,9 +12,13 @@ import datetime
 
 # Create your views here.
 def home(request):
-    products = Product.objects.all()
+    data = cartData(request)
+    cartItems = data['cartItems']
 
-    return render(request, 'store/home.html', {'products': [products]})
+    products = Product.objects.all()
+    context = {'products': products, 'cartItems': cartItems}
+
+    return render(request, 'store/home.html', context)
 
 
 def booking(request):
@@ -106,9 +110,14 @@ def processOrder(request):
 
 
 def service(request):
-    allservices = Service.objects.all()
+    data = cartData(request)
+    cartItems = data['cartItems']
 
-    return render(request, 'store/service_list.html', {'allservices': allservices})
+    allservices = Service.objects.all()
+    context = {
+        'cartItems': cartItems, 'allservices': allservices}
+
+    return render(request, 'store/service_list.html', context)
 
 # class ServiceListView(ListView):
 #     model = Service
@@ -118,7 +127,11 @@ def service(request):
 
 
 def about(request):
-    return render(request, 'store/about.html')
+    data = cartData(request)
+    cartItems = data['cartItems']
+
+    context = {'cartItems': cartItems}
+    return render(request, 'store/about.html', context)
 
 
 def order(request):

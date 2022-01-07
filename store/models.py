@@ -93,6 +93,7 @@ class Contact_Info(models.Model):
 class Service(models.Model):
     service_name = models.CharField(max_length=255)
     service_price = models.DecimalField(max_digits=5, decimal_places=2)
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
 
     def __str__(self):
         return self.service_name

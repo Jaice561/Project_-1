@@ -427,7 +427,7 @@ skills
   background: var(--color-grey-5);
 }
 .skill {
-  padding: 7.5rem 0;
+  padding: 6rem 0;
   text-align: center;
   transition: var(--transition);
 }
@@ -445,9 +445,9 @@ skills
 }
 
 .skill img {
-  /* padding-top: -25px; */
-  height: 25rem;
-  margin-top: -120px;
+  padding-top: 16px;
+  height: 24rem;
+  margin-top: -112px;
   margin-bottom: -100px;
 }
 
